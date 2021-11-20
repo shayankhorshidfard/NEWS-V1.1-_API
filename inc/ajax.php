@@ -13,3 +13,4 @@ function wp_apis_handle_ajax_operation()
         'ID' => $current_user->ID
     ]);
 }
+?>
