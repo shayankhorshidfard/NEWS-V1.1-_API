@@ -21,3 +21,4 @@ function simple_plugin_deactivation()
 {
 
 }
+?>
