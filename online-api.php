@@ -33,7 +33,7 @@ define('WP_APIS_URL', plugin_dir_url(__FILE__)); //name and cap
 define('WP_APIS_INC', WP_APIS_DIR . '/inc/'); //name and cap
 define('WP_APIS_TPL', WP_APIS_DIR . '/tpl/'); //name and cap
 
-register_activation_hook(__FILE__, 'simple_plugin_activation');
+register_activation_hook(__FILE__, 'DBP_tb_create');
 register_deactivation_hook(__FILE__, 'simple_plugin_deactivation');
 
 function learningWordPress_resources(){
@@ -42,16 +42,10 @@ function learningWordPress_resources(){
 
 
 }
-
-function simple_plugin_activation()
-{
-
-}
-
-function simple_plugin_deactivation()
-{
-
-}
+//Include database file
+include_once ("CreateData.php");
+//register hook
+register_activation_hook(__FILE__,'DBP_tb_create');
 
 if (is_admin())
 {
