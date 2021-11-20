@@ -145,6 +145,10 @@ define( 'DOING_AJAX', true );
         border: 1px solid #d0d0d;
         border-radius: 5px;
     }
+       tr td{
+        border-bottom: 1px solid #dddd;
+    }
+
 
     div.scroll {
         padding-right: 20px;
