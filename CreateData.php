@@ -7,9 +7,10 @@ function DBP_tb_create()
     $DBP_tb_name = $wpdb->prefix ."dbp_tb_login";
     $DBP_query = "CREATE TABLE  {$wpdb->prefix}apinews
     (
-    id int(11) NOT NULL AUTO_INCREMENT,
+      id int(11) NOT NULL AUTO_INCREMENT,
       `name_office` text COLLATE utf8mb4_persian_ci DEFAULT NULL,
       `api_address` text COLLATE utf8mb4_persian_ci DEFAULT NULL,
+      `categories` varchar(200) COLLATE utf8mb4_persian_ci DEFAULT NULL,
       PRIMARY KEY (id) 
     )";
 

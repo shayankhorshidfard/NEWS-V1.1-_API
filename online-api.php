@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: ONLINE-API
+Plugin Name: پلاگین خبر
 Plugin URI: http://wordpress.org/plugins/hello-dolly/
 Description:  api پلاگین دریافت اخبار به صورت
 Author: shayan khorshidfard
