@@ -32,3 +32,4 @@ add_action('add_meta_boxes','wp_apis_add_price_meta_box',10,2);
 
 add_action('save_post','wp_apis_save_price_meta_box');
 
+?>
