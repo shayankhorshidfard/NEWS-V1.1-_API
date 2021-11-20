@@ -14,7 +14,7 @@
     $result = $wpdb->get_results ( "SELECT * FROM {$wpdb->prefix}posts" );
     foreach ( $result as $print ) {
         ?>
-        <h3 class="card-title"><?php echo $print->post_title;?></h3>
+        <h3 class="card-title" style="color: #4579c3"><?php echo $print->post_title;?></h3>
         <p style="font-size: 15px;font-weight: bold" class="card-text"><?php echo $print->post_content;?></p>
 
 
