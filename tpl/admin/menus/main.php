@@ -1,13 +1,5 @@
 <?php
-
-// custom-ajax-endpoint.php
-
-define( 'DOING_AJAX', true );
-
-// Tell WordPress to load as little as possible
-
-
-
+define('DOING_AJAX', true);
 ?>
 <style>
     table {
@@ -84,6 +76,10 @@ define( 'DOING_AJAX', true );
         if ($posts != null) {
             global $wpdb, $enable;
             $enable = 1;
+            $succesmsg = '<span class="button message" dir="rtl" style="border:2px solid green !important;margin-top: 10px;color: green">  اطلاعات این api با موفقیت ثبت شد </span></div>';
+            $errormsg = '<span class="button message-error" dir="rtl" style="border:2px solid #f5002f !important;margin-top: 10px"> اطلاعات این api قبلا ثبت شده است </span>';
+            $apipost = $wpdb->get_results("SELECT * FROM {$wpdb->prefix}postmeta");
+
             foreach ($posts as $post) {
                 $title = $post->title->rendered;
                 $content = $post->content->rendered;
@@ -110,9 +106,14 @@ define( 'DOING_AJAX', true );
 
 
             }
+            if (count($apipost) == 0) {
+                echo $succesmsg;
+            } else {
+                echo $errormsg;
+            }
+
             echo '</div>';
         }
-
     }
     if (isset($_POST['getNews'])) {
 
@@ -142,13 +143,29 @@ define( 'DOING_AJAX', true );
 
 <style>
     .card {
-        border: 1px solid #d0d0d;
+        border: 1px solid #d0d0d0;
         border-radius: 5px;
     }
-       tr td{
-        border-bottom: 1px solid #dddd;
+
+    .message {
+        width: auto;
+        border: 2px solid green;
+        color: green;
+        margin-top: 10px;
+        text-align: right;
     }
 
+    .message-error {
+        width: auto;
+        border: 2px solid #802c41;
+        color: #802c41;
+        margin-top: 10px;
+        text-align: right;
+    }
+
+    tr td {
+        border-bottom: 1px solid #dddd;
+    }
 
     div.scroll {
         padding-right: 20px;
